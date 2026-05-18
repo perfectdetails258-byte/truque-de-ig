@@ -203,6 +203,14 @@ function App() {
           </div>
         </div>
       </section>
+
+      {/* ══════════════════ FOOTER ══════════════════ */}
+      <footer className="footer">
+        <div className="container">
+          <p className="footer-copy">© 2026 Todos os direitos reservados.</p>
+          <p className="footer-disclaimer">Este site não faz parte do website do Facebook ou do Facebook Inc. Adicionalmente, este site NÃO é endossado pelo Facebook de nenhuma maneira. FACEBOOK é uma marca comercial da FACEBOOK, Inc.</p>
+        </div>
+      </footer>
     </>
   );
 }
