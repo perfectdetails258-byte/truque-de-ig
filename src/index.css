@@ -292,12 +292,7 @@ body {
   border-radius: 0;
   overflow: hidden;
   background: transparent;
-  box-shadow: var(--shadow-md);
-  transition: box-shadow .3s ease;
-}
-
-.video-wrapper:hover {
-  box-shadow: var(--shadow-lg);
+  box-shadow: none;
 }
 
 .video-caption {
@@ -521,4 +516,12 @@ body {
   .hero-title { font-size: 1.18rem; letter-spacing: .03em; }
   .hl-box { padding: 1px 7px 3px; }
   .section-title { font-size: 1.6rem; }
+  
+  .testimonials-section { padding: 40px 16px; }
+  .fb-avatar { width: 36px; height: 36px; }
+  .fb-comment { gap: 8px; margin-bottom: 14px; }
+  .fb-comment-bubble { padding: 8px 12px; }
+  .fb-name { font-size: 0.9rem; }
+  .fb-text { font-size: 0.9rem; }
+  .fb-comment-actions { gap: 12px; font-size: 0.75rem; padding-left: 8px; }
 }
