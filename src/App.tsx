@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
+import Quiz from './Quiz';
 
 function App() {
+  const [quizDone, setQuizDone] = useState(false);
   const [timeLeft, setTimeLeft] = useState(15 * 60);
   const [likes, setLikes] = useState({
     1: 142, 2: 98, 3: 213, 4: 167, 5: 189
@@ -50,7 +52,11 @@ function App() {
 
   return (
     <>
+      {/* ══════════════════ QUIZ OVERLAY ══════════════════ */}
+      {!quizDone && <Quiz onComplete={() => setQuizDone(true)} />}
+
       {/* ══════════════════ URGENCY BAR ══════════════════ */}
+
       <div className="urgency-bar" id="urgency-bar">
         <p className="urgency-label">ATENÇÃO: ESTA OFERTA ÚNICA EXPIRA EM</p>
         <div className="urgency-clock">
