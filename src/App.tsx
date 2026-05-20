@@ -56,13 +56,14 @@ function App() {
       {!quizDone && <Quiz onComplete={() => setQuizDone(true)} />}
 
       {/* ══════════════════ URGENCY BAR ══════════════════ */}
-
-      <div className="urgency-bar" id="urgency-bar">
-        <p className="urgency-label">ATENÇÃO: ESTA OFERTA ÚNICA EXPIRA EM</p>
-        <div className="urgency-clock">
-          <span>{m}</span><span className="urgency-colon">:</span><span>{s}</span>
+      {quizDone && (
+        <div className="urgency-bar" id="urgency-bar">
+          <p className="urgency-label">ATENÇÃO: ESTA OFERTA ÚNICA EXPIRA EM</p>
+          <div className="urgency-clock">
+            <span>{m}</span><span className="urgency-colon">:</span><span>{s}</span>
+          </div>
         </div>
-      </div>
+      )}
 
       {/* ══════════════════ HERO ══════════════════ */}
       <header className="hero" id="hero">
