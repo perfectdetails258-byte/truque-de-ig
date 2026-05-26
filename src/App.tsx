@@ -141,7 +141,7 @@ function App() {
 
             {/* Comment 2 */}
             <div className="fb-comment">
-              <img src="/avatar2.png" alt="Perfil" className="fb-avatar" />
+              <img src="/avatar_palatos.jpg" alt="Perfil" className="fb-avatar" />
               <div className="fb-comment-body">
                 <div className="fb-comment-bubble">
                   <span className="fb-name">Palatos Cossa</span>
