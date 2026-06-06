@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { ProductCarousel } from './ProductCarousel';
 
 function App() {
   const [timeLeft, setTimeLeft] = useState(15 * 60);
@@ -106,6 +107,9 @@ function App() {
           <p className="video-caption">⚠️ Atenção: Este vídeo pode ser removido a qualquer momento.</p>
         </div>
       </section>
+
+      {/* ══════════════════ CAROUSEL ══════════════════ */}
+      <ProductCarousel />
 
       {/* ══════════════════ TESTIMONIALS ══════════════════ */}
       <section className="testimonials-section" id="depoimentos">
