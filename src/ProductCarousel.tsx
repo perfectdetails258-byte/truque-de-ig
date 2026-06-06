@@ -33,9 +33,6 @@ export function ProductCarousel() {
 
   return (
     <section className="external-image-carousel">
-      <div className="carousel-header">
-        <p>Veja as imagens reais do produto</p>
-      </div>
       <div className="carousel-wrapper">
         <button className="carousel-button prev" onClick={() => moveSlide(-1)}>‹</button>
 
