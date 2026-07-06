@@ -1,4 +1,5 @@
 {
+  "name": "truque-do-gi",
   "headers": [
     {
       "source": "/(.*)",
