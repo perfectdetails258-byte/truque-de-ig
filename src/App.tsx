@@ -90,19 +90,10 @@ function App() {
       <section className="video-section" id="video">
         <div className="container">
           <div className="video-wrapper" id="video-wrapper">
-            {/* VSL ConverteAI */}
-            <div id="ifr_6a2570358e99006cc2b826a8_wrapper" style={{ margin: '0 auto', width: '100%', maxWidth: '400px' }}>
-              <div style={{ position: 'relative', padding: '133.33333333333331% 0 0 0' }} id="ifr_6a2570358e99006cc2b826a8_aspect">
-                <iframe
-                  frameBorder="0"
-                  allowFullScreen
-                  src={`https://scripts.converteai.net/f1e055dd-5317-4742-95ea-187e03fffcf2/players/6a2570358e99006cc2b826a8/v4/embed.html${window.location.search || '?'}&vl=${encodeURIComponent(window.location.href)}`}
-                  id="ifr_6a2570358e99006cc2b826a8"
-                  style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
-                  referrerPolicy="origin"
-                ></iframe>
-              </div>
-            </div>
+          {/* VSL ConverteAI – novo player */}
+            <vturb-smartplayer id="vid-6a4aef831cc1981e9511822d" style={{ display: 'block', margin: '0 auto', width: '100%', maxWidth: '400px' }}>
+              <div className="vturb-player-placeholder" style={{ position: 'relative', width: '100%', paddingTop: '133.33333333333331%', zIndex: 0, backgroundColor: 'black' }}></div>
+            </vturb-smartplayer>
           </div>
           <p className="video-caption">⚠️ Atenção: Este vídeo pode ser removido a qualquer momento.</p>
         </div>
