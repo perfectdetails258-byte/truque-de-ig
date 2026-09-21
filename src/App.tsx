@@ -90,9 +90,21 @@ function App() {
       <section className="video-section" id="video">
         <div className="container">
           <div className="video-wrapper" id="video-wrapper">
-          {/* VSL ConverteAI – novo player */}
-            <vturb-smartplayer id="vid-6a4aef831cc1981e9511822d" style={{ display: 'block', margin: '0 auto', width: '100%', maxWidth: '400px' }}>
-              <div className="vturb-player-placeholder" style={{ position: 'relative', width: '100%', paddingTop: '133.33333333333331%', zIndex: 0, backgroundColor: 'black' }}></div>
+            {/* VSL ConverteAI – vturb-smartplayer web component */}
+            <vturb-smartplayer
+              id="vid-6aa9c9e2eda7635d0319d11b"
+              style={{ display: 'block', margin: '0 auto', width: '100%', maxWidth: '400px' }}
+            >
+              <div
+                className="vturb-player-placeholder"
+                style={{
+                  position: 'relative',
+                  width: '100%',
+                  paddingTop: '133.33333333333331%',
+                  zIndex: 0,
+                  backgroundColor: 'black'
+                }}
+              />
             </vturb-smartplayer>
           </div>
           <p className="video-caption">⚠️ Atenção: Este vídeo pode ser removido a qualquer momento.</p>
