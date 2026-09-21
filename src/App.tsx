@@ -14,8 +14,25 @@ function App() {
     return () => clearInterval(timer);
   }, []);
 
+  // ── Injectar player.js APÓS o <vturb-smartplayer> estar no DOM ──────────────
+  // Elimina a race condition: anteriormente o script era async no <head> e
+  // podia correr antes de o React renderizar o elemento, resultando em
+  // retângulo preto intermitente.
   useEffect(() => {
-    const observeTargets = document.querySelectorAll('.fb-comment, .video-wrapper, .cta-section');
+    const ATTR = 'data-vturb-injected';
+    if (document.querySelector(`script[${ATTR}]`)) return; // guard: não duplicar
+    const s = document.createElement('script');
+    s.src = 'https://scripts.converteai.net/da439119-acf0-4ae7-adf8-83929e23e0b0/players/6aa9c9e2eda7635d0319d11b/v4/player.js';
+    s.async = true;
+    s.setAttribute(ATTR, '1');
+    document.head.appendChild(s);
+  }, []);
+
+  // ── Animações de entrada por scroll ─────────────────────────────────────────
+  // Nota: .video-wrapper excluído intencionalmente para evitar opacity:0
+  // no contentor do player durante a inicialização.
+  useEffect(() => {
+    const observeTargets = document.querySelectorAll('.fb-comment, .cta-section');
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
