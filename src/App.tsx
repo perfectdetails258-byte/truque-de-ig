@@ -209,6 +209,18 @@ function App() {
 
           </div>
         </div>
+
+        {/* ══ CTA BUTTON ══ */}
+        <div className="cta-btn-wrapper">
+          <a
+            href="https://pay.zenofy.io/p/6a13713e8466e1361cc25d9e"
+            className="cta-btn-buy"
+            id="cta-garantir-agora"
+          >
+            GARANTIR AGORA
+          </a>
+        </div>
+
       </section>
 
       {/* ══════════════════ FOOTER ══════════════════ */}

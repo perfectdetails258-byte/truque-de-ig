@@ -447,6 +447,61 @@ body {
   margin-bottom: 40px;
 }
 
+/* ---------- CTA BUY BUTTON ---------- */
+.cta-btn-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 32px 20px;
+  background: #ffffff;
+}
+
+.cta-btn-buy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 420px;
+  min-height: 56px;
+  background: #15803D;
+  color: #ffffff;
+  font-family: var(--font);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-decoration: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(21, 128, 61, 0.30);
+  transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
+  cursor: pointer;
+  padding: 0 24px;
+}
+
+.cta-btn-buy:hover {
+  background: #166534;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(21, 128, 61, 0.40);
+}
+
+.cta-btn-buy:active {
+  transform: translateY(0) scale(.98);
+  box-shadow: 0 2px 8px rgba(21, 128, 61, 0.25);
+}
+
+.cta-btn-buy:focus-visible {
+  outline: 3px solid #15803D;
+  outline-offset: 4px;
+}
+
+@media (max-width: 480px) {
+  .cta-btn-wrapper {
+    padding: 32px 20px;
+  }
+  .cta-btn-buy {
+    max-width: 100%;
+    font-size: 17px;
+  }
+}
+
 /* ---------- FOOTER ---------- */
 .footer {
   background: #ffffff;
