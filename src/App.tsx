@@ -22,7 +22,7 @@ function App() {
     const ATTR = 'data-vturb-injected';
     if (document.querySelector(`script[${ATTR}]`)) return; // guard: não duplicar
     const s = document.createElement('script');
-    s.src = 'https://scripts.converteai.net/da439119-acf0-4ae7-adf8-83929e23e0b0/players/6aa9c9e2eda7635d0319d11b/v4/player.js';
+    s.src = 'https://scripts.converteai.net/7d37b512-02cb-4aac-8dbc-8445fdfba909/players/6ac123377af7eb8e20e7dc56/v4/player.js';
     s.async = true;
     s.setAttribute(ATTR, '1');
     document.head.appendChild(s);
@@ -109,7 +109,7 @@ function App() {
           <div className="video-wrapper" id="video-wrapper">
             {/* VSL ConverteAI – vturb-smartplayer web component */}
             <vturb-smartplayer
-              id="vid-6aa9c9e2eda7635d0319d11b"
+              id="vid-6ac123377af7eb8e20e7dc56"
               style={{ display: 'block', margin: '0 auto', width: '100%', maxWidth: '400px' }}
             >
               <div
