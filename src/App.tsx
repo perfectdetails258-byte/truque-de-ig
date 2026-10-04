@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { ProductCarousel } from './ProductCarousel';
+import { PurchaseNotification } from './PurchaseNotification';
 
 function App() {
   const [timeLeft, setTimeLeft] = useState(15 * 60);
@@ -247,6 +248,11 @@ function App() {
           <p className="footer-disclaimer">Este site não faz parte do website do Facebook ou do Facebook Inc. Adicionalmente, este site NÃO é endossado pelo Facebook de nenhuma maneira. FACEBOOK é uma marca comercial da FACEBOOK, Inc.</p>
         </div>
       </footer>
+
+      {/* ══════════════════ NOTIFICAÇÕES DE COMPRA ══════════════════
+          Posição: fixed, canto inferior esquerdo (desktop) / inferior (mobile)
+          Não afecta o fluxo da página nem os píxeis existentes.         */}
+      <PurchaseNotification />
     </>
   );
 }

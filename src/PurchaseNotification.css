@@ -1,0 +1,195 @@
+/* ══════════════════════════════════════════════════════════════════
+   PurchaseNotification.css
+   Cartão de notificação de compras confirmadas
+   Design: consistente com index.css (Inter, branco, sombra suave)
+   ══════════════════════════════════════════════════════════════════ */
+
+/* ── Cartão base ─────────────────────────────────────────────────── */
+.pn-card {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 5000;
+  width: 300px;
+  max-width: calc(100vw - 48px);
+
+  background: #ffffff;
+  border-radius: 14px;
+  border-left: 3px solid #15803D;
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.12),
+    0 1px 4px  rgba(0, 0, 0, 0.07);
+
+  padding: 14px 16px 12px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.875rem;
+  color: #111111;
+
+  /* Animação: deslizar da esquerda */
+  opacity: 0;
+  transform: translateX(calc(-100% - 32px));
+  transition:
+    transform 0.38s cubic-bezier(0.34, 1.15, 0.64, 1),
+    opacity   0.28s ease;
+  will-change: transform, opacity;
+  pointer-events: none;
+}
+
+/* ── Estados de entrada / saída ──────────────────────────────────── */
+.pn-card--in {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.pn-card--out {
+  opacity: 0;
+  transform: translateX(calc(-100% - 32px));
+  pointer-events: none;
+}
+
+/* ── Banner de demonstração ──────────────────────────────────────── */
+.pn-demo-badge {
+  display: inline-block;
+  background: #FEF3C7;
+  color: #92400E;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+/* ── Botão fechar ────────────────────────────────────────────────── */
+.pn-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.15rem;
+  line-height: 1;
+  color: #bbbbbb;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 5px;
+  transition: color 0.15s ease, background 0.15s ease;
+  font-family: inherit;
+}
+
+.pn-close:hover {
+  color: #333333;
+  background: #f2f2f2;
+}
+
+.pn-close:focus-visible {
+  outline: 2px solid #15803D;
+  outline-offset: 2px;
+}
+
+/* ── Cabeçalho ───────────────────────────────────────────────────── */
+.pn-header {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 9px;
+  /* Afastar do botão fechar */
+  padding-right: 22px;
+}
+
+.pn-check-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  background: #15803D;
+  color: #ffffff;
+  border-radius: 50%;
+  font-size: 0.68rem;
+  font-weight: 900;
+}
+
+.pn-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #15803D;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+/* ── Corpo ───────────────────────────────────────────────────────── */
+.pn-body {
+  line-height: 1.45;
+}
+
+.pn-line {
+  font-size: 0.9rem;
+  color: #111111;
+  margin-bottom: 1px;
+}
+
+.pn-product {
+  font-size: 0.82rem;
+  color: #444444;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.pn-phone {
+  font-size: 0.78rem;
+  color: #666666;
+  font-family: 'Courier New', 'Courier', monospace;
+  letter-spacing: 0.03em;
+  margin-bottom: 3px;
+}
+
+.pn-wallet {
+  font-size: 0.79rem;
+  color: #555555;
+  margin-top: 3px;
+}
+
+/* ── Rodapé ──────────────────────────────────────────────────────── */
+.pn-footer {
+  display: flex;
+  align-items: center;
+  margin-top: 9px;
+  padding-top: 7px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.pn-time {
+  font-size: 0.7rem;
+  color: #aaaaaa;
+  letter-spacing: 0.02em;
+}
+
+/* ── Mobile ──────────────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .pn-card {
+    left: 10px;
+    right: 10px;
+    width: auto;
+    /*
+      80px de margem inferior:
+      — Evita tapar botões fixos do browser (iOS Safari toolbar).
+      — Fica acima do botão CTA se existir posicionamento fixo futuro.
+      — Não interfere com os controlos da VSL (que é inline, não fixed).
+    */
+    bottom: 80px;
+    border-radius: 12px;
+  }
+}
+
+/* ── Movimento reduzido (acessibilidade) ─────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .pn-card {
+    transition: opacity 0.2s ease;
+  }
+  .pn-card--in  { transform: none; opacity: 1; }
+  .pn-card--out { transform: none; opacity: 0; }
+}
